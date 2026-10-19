@@ -4,7 +4,7 @@
   "private": true,
   "description": "Tessera: a local, test-mode payments platform with a Stripe-compatible /v1 API",
   "type": "module",
-  "engines": { "node": ">=20.10 <24" },
+  "engines": { "node": ">=20.10" },
   "scripts": {
     "build": "vite build",
     "start": "node --import tsx src/server.ts",

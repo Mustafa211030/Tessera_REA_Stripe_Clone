@@ -1,0 +1,16 @@
+# Render blueprint: a Docker web service with a 1 GB persistent disk for the database.
+services:
+  - type: web
+    name: tessera
+    runtime: docker
+    plan: starter
+    healthCheckPath: /
+    envVars:
+      - key: HOST
+        value: 0.0.0.0
+      - key: DATA_DIR
+        value: /data
+    disk:
+      name: tessera-data
+      mountPath: /data
+      sizeGB: 1
