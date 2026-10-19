@@ -1,0 +1,36 @@
+{
+  "name": "tessera",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Tessera: a local, test-mode payments platform with a Stripe-compatible /v1 API",
+  "type": "module",
+  "engines": { "node": ">=20.10 <24" },
+  "scripts": {
+    "build": "vite build",
+    "start": "node --import tsx src/server.ts",
+    "dev": "node --import tsx --watch src/server.ts",
+    "dev:web": "vite",
+    "seed": "node --import tsx src/seed.ts",
+    "loadtest": "node --import tsx scripts/loadtest.ts",
+    "setup": "npm install && npm run build && npm run seed",
+    "test": "node --import tsx --test --test-concurrency=1 test/*.test.ts"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.5.10",
+    "@fastify/static": "^10.1.6",
+    "fastify": "^5.12.7",
+    "qs": "^6.16.1",
+    "tsx": "^4.23.15"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/qs": "^6.15.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "stripe": "^23.0.0",
+    "vite": "^8.3.4"
+  }
+}

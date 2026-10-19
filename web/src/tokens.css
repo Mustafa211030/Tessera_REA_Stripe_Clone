@@ -1,0 +1,117 @@
+/*
+ * Tessera design tokens, three tiers:
+ *   core      raw values (palette ramps, scale steps)          --core-*
+ *   semantic  meaning, re-pointed per color mode               --color-*, --space-*, --font-*
+ *   component  what components read                            --button-*, --input-*, ...
+ * Components never read core tokens directly.
+ */
+:root {
+  /* ---- core: palette ---- */
+  --core-jade-50: #effcf8; --core-jade-100: #c9f4e7; --core-jade-200: #95e8d0; --core-jade-300: #5ad3b4;
+  --core-jade-400: #2bb896; --core-jade-500: #129c7c; --core-jade-600: #0f7d65; --core-jade-700: #0f6453;
+  --core-jade-800: #104f44; --core-jade-900: #0e4139; --core-jade-950: #062621;
+  --core-stone-0: #ffffff; --core-stone-25: #fbfaf9; --core-stone-50: #f5f4f2; --core-stone-100: #ebe8e4;
+  --core-stone-200: #d9d4ce; --core-stone-300: #bcb4ab; --core-stone-400: #958b80; --core-stone-500: #766c62;
+  --core-stone-600: #5d554d; --core-stone-700: #48413b; --core-stone-800: #312c28; --core-stone-900: #221e1b;
+  --core-stone-950: #151210;
+  --core-red-50: #fef3f2; --core-red-500: #d92d20; --core-red-600: #b42318; --core-red-300: #fda29b;
+  --core-amber-50: #fffaeb; --core-amber-500: #dc6803; --core-amber-700: #93370d; --core-amber-300: #fec84b;
+  --core-green-50: #ecfdf3; --core-green-600: #067647; --core-green-300: #75e0a7;
+  --core-blue-50: #eff8ff; --core-blue-600: #175cd3; --core-blue-300: #84caff;
+
+  /* ---- core: scales (4px base, 8px rhythm) ---- */
+  --core-space-1: 4px; --core-space-2: 8px; --core-space-3: 12px; --core-space-4: 16px; --core-space-5: 20px;
+  --core-space-6: 24px; --core-space-8: 32px; --core-space-10: 40px; --core-space-12: 48px; --core-space-16: 64px;
+  --core-radius-sm: 4px; --core-radius-md: 8px; --core-radius-lg: 12px; --core-radius-xl: 20px; --core-radius-round: 999px;
+
+  /* ---- semantic: typography ---- */
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
+  --font-size-xs: 12px; --font-size-sm: 13px; --font-size-md: 14px; --font-size-lg: 16px;
+  --font-size-xl: 20px; --font-size-2xl: 28px; --font-size-3xl: 36px;
+  --line-tight: 1.15; --line-normal: 1.45;
+  --weight-regular: 400; --weight-medium: 500; --weight-semibold: 600;
+
+  /* ---- semantic: color (light) ---- */
+  --color-bg: var(--core-stone-25);
+  --color-surface: var(--core-stone-0);
+  --color-surface-sunken: var(--core-stone-50);
+  --color-surface-hover: var(--core-stone-50);
+  --color-border: var(--core-stone-100);
+  --color-border-strong: var(--core-stone-200);
+  --color-text: var(--core-stone-900);
+  --color-text-soft: var(--core-stone-600);
+  --color-text-quiet: var(--core-stone-500);
+  --color-brand: var(--core-jade-600);
+  --color-brand-hover: var(--core-jade-700);
+  --color-brand-soft: var(--core-jade-50);
+  --color-brand-text: var(--core-jade-700);
+  --color-on-brand: var(--core-stone-0);
+  --color-focus: var(--core-jade-500);
+  --color-success-bg: var(--core-green-50); --color-success-text: var(--core-green-600);
+  --color-warning-bg: var(--core-amber-50); --color-warning-text: var(--core-amber-700);
+  --color-danger-bg: var(--core-red-50); --color-danger-text: var(--core-red-600); --color-danger: var(--core-red-500);
+  --color-info-bg: var(--core-blue-50); --color-info-text: var(--core-blue-600);
+  --color-test-band: var(--core-amber-500);
+
+  /* ---- semantic: elevation (two-layer shadows, tinted) ---- */
+  --shadow-sm: 0 1px 2px rgb(34 30 27 / .06), 0 1px 1px rgb(34 30 27 / .04);
+  --shadow-md: 0 4px 12px -2px rgb(34 30 27 / .10), 0 2px 4px -2px rgb(34 30 27 / .06);
+  --shadow-lg: 0 18px 40px -12px rgb(34 30 27 / .22), 0 6px 14px -6px rgb(34 30 27 / .10);
+
+  /* ---- semantic: motion ---- */
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --ease-in-out: cubic-bezier(.45, 0, .55, 1);
+  --duration-fast: 120ms; --duration-base: 200ms;
+
+  /* ---- component tokens ---- */
+  --button-radius: var(--core-radius-md);
+  --button-primary-bg: var(--color-brand);
+  --button-primary-bg-hover: var(--color-brand-hover);
+  --button-primary-text: var(--color-on-brand);
+  --button-secondary-bg: var(--color-surface);
+  --button-secondary-border: var(--color-border-strong);
+  --button-secondary-text: var(--color-text);
+  --input-bg: var(--color-surface);
+  --input-border: var(--color-border-strong);
+  --input-border-focus: var(--color-focus);
+  --input-radius: var(--core-radius-md);
+  --card-bg: var(--color-surface);
+  --card-border: var(--color-border);
+  --card-radius: var(--core-radius-lg);
+  --table-header-text: var(--color-text-quiet);
+  --nav-item-active-bg: var(--color-brand-soft);
+  --nav-item-active-text: var(--color-brand-text);
+  --focus-ring: 0 0 0 3px color-mix(in srgb, var(--color-focus) 30%, transparent);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-bg: var(--core-stone-950);
+    --color-surface: var(--core-stone-900);
+    --color-surface-sunken: #1a1715;
+    --color-surface-hover: var(--core-stone-800);
+    --color-border: var(--core-stone-800);
+    --color-border-strong: var(--core-stone-700);
+    --color-text: var(--core-stone-50);
+    --color-text-soft: var(--core-stone-300);
+    --color-text-quiet: var(--core-stone-400);
+    --color-brand: var(--core-jade-400);
+    --color-brand-hover: var(--core-jade-300);
+    --color-brand-soft: color-mix(in srgb, var(--core-jade-500) 18%, transparent);
+    --color-brand-text: var(--core-jade-300);
+    --color-on-brand: var(--core-jade-950);
+    --color-focus: var(--core-jade-300);
+    --color-success-bg: color-mix(in srgb, var(--core-green-600) 22%, transparent); --color-success-text: var(--core-green-300);
+    --color-warning-bg: color-mix(in srgb, var(--core-amber-500) 20%, transparent); --color-warning-text: var(--core-amber-300);
+    --color-danger-bg: color-mix(in srgb, var(--core-red-500) 20%, transparent); --color-danger-text: var(--core-red-300);
+    --color-info-bg: color-mix(in srgb, var(--core-blue-600) 22%, transparent); --color-info-text: var(--core-blue-300);
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / .4);
+    --shadow-md: 0 4px 12px -2px rgb(0 0 0 / .5);
+    --shadow-lg: 0 18px 40px -12px rgb(0 0 0 / .7);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --duration-fast: 0ms; --duration-base: 0ms; }
+}

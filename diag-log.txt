@@ -1,0 +1,13 @@
+[09:57:16] node v24.18.1 win32 x64 · flags: (none)
+[09:57:16] memory: total 16064 MB, free 5869 MB · cpus 8 · 11th Gen Intel(R) Core(TM) i5-1145G7 @ 2.60GHz
+[09:57:16] START 1 database engine in memory
+[09:57:18] OK    1 database engine in memory (1823 ms, heap 604 MB rss)
+[09:57:18] START 2 database engine on disk
+[09:57:20] OK    2 database engine on disk (2095 ms, heap 594 MB rss)
+[09:57:20] START 3 Tessera schema on a fresh database
+[09:57:22] OK    3 Tessera schema on a fresh database (2429 ms, heap 604 MB rss)
+[09:57:22] START 4 card vault
+[09:57:24] OK    4 card vault (2027 ms, heap 655 MB rss)
+[09:57:24] START 5 Tessera schema on your data folder
+[09:57:25] OK    5 Tessera schema on your data folder (533 ms, heap 385 MB rss)
+[09:57:25] ALL STEPS PASSED
